@@ -1,4 +1,5 @@
-namespace buttons {
+//% color=0 weight=0 icon="\f7df" block="Input"
+namespace buttons.advanced {
     //% block="when button $albab (A, B, A+B, logo) is pressed $number_of_times times in a row"
     export function button (albab: string, number_of_times: number) {
         if (albab == "A" || albab == "a") {
