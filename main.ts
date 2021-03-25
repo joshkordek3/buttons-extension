@@ -1,4 +1,4 @@
-//% color=0 weight=0 icon="\uf835" block="Input"
+//% color=0 weight=0 icon="\uf8cc" block="Input"
 namespace buttons.advanced {
     //% block="when button $albab (A, B, A+B, logo) is pressed $number_of_times times in a row"
     export function button (albab: string, number_of_times: number) {
