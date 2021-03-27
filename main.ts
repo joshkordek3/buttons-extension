@@ -1,19 +1,15 @@
 enum Buttons {
 //% block="Button A"
 A,
-
 //% block="Button B"
 B,
-
 //% block="Button A+B"
-AB,
-
+C,
 //% block="Logo"
-Logo,
+L,
 }
 //% color=#7AD7F0 weight=0 icon="\uf2dc" block="Input"
 namespace input2 {
-    let microbit_version = 1
     function button2 (button: number) {
         if (button = 1) {
             return input.buttonIsPressed(Button.A)
@@ -53,22 +49,12 @@ namespace input2 {
         }
         return true
     }
-    //% block="set microbit version to version $version"
-    //% version.min=1 version.max=2 version.defl=2
-    export function microbit_version_ (version: number) {
-        microbit_version = version
-        if (microbit_version = 2) {
-            if (input.logoIsPressed()) {
-
-            }
-        }
-        if (input.buttonIsPressed(Button.AB)) {
-
-        }
+    //% block="set microbit version to V2"
+    export function microbit_version_ () {
+        if (input.logoIsPressed()) {}
+        if (input.buttonIsPressed(Button.AB)) {}
     }
-    if (input.buttonIsPressed(Button.AB)) {
-
-    }
+    if (input.buttonIsPressed(Button.AB)) {}
 }  
 //function button (albab: string, number_of_times: number) {
 //    if (albab == "A" || albab == "a") {
