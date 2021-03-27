@@ -5,12 +5,12 @@ A,
 B,
 //% block="Button A+B"
 C,
-//% block="Logo"
-L,
+// block="Logo"
+//L,
 }
 //% color=#7AD7F0 weight=0 icon="\uf2dc" block="Input"
-namespace input2 {
-    function button2 (button: number) {
+namespace snowflake_input {
+    function button2 (button: Buttons) {
         if (button = 1) {
             return input.buttonIsPressed(Button.A)
         } else if (button = 2) {
@@ -24,7 +24,7 @@ namespace input2 {
     }
     //% blockId=button_press_35372836287323
     //% block="when button $albab is pressed $number_of_times times in a row"
-    export function button (albab: Buttons, number_of_times: number) {
+    export function button_pressed (albab: Buttons, number_of_times: number) {
         x:
         for (let index = 0; index < number_of_times; index++) {
             while (button2(albab)) {}
@@ -40,7 +40,7 @@ namespace input2 {
     }  
     //% blockId=button_press_3828372938287328392793289372832
     //% block="when button: $button is held for $time (ms)"
-    export function button3 (button: Buttons, time: number) {
+    export function button_held (button: Buttons, time: number) {
         let start = control.millis()
         while(start + time > control.millis()) {
             if(!(button2(button))) {
