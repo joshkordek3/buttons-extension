@@ -52,7 +52,6 @@ namespace snowflake_input {
     //% block="set microbit version to V2"
     export function microbit_version_ () {
         if (input.logoIsPressed()) {}
-        if (input.buttonIsPressed(Button.AB)) {}
     }
     if (input.buttonIsPressed(Button.AB)) {}
 }  
