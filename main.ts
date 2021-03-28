@@ -4,7 +4,7 @@ A,
 //% block="Button B"
 B,
 //% block="Button A+B"
-C,
+AB,
 // block="Logo"
 //L,
 }
@@ -23,7 +23,7 @@ namespace snowflake_input {
         return false
     }
     //% blockId=button_press_35372836287323
-    //% block="when button $albab is pressed $number_of_times times in a row"
+    //% block="when $albab is pressed $number_of_times times in a row"
     export function button_pressed (albab: Buttons, number_of_times: number) {
         x:
         for (let index = 0; index < number_of_times; index++) {
@@ -39,7 +39,7 @@ namespace snowflake_input {
         return true
     }  
     //% blockId=button_press_3828372938287328392793289372832
-    //% block="when button: $button is held for $time (ms)"
+    //% block="when $button is held for $time (ms)"
     export function button_held (button: Buttons, time: number) {
         let start = control.millis()
         while(start + time > control.millis()) {
