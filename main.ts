@@ -5,19 +5,19 @@ A,
 B,
 //% block="Button A+B"
 AB,
-// block="Logo"
-//L,
+//% block="Logo"
+L,
 }
 //% color=#7AD7F0 weight=0 icon="\uf2dc" block="Input"
 namespace snowflake_input {
     function button2 (button: Buttons) {
-        if (button = 1) {
+        if (button == Buttons.A) {
             return input.buttonIsPressed(Button.A)
-        } else if (button = 2) {
+        } else if (button == Buttons.B) {
             return input.buttonIsPressed(Button.B)
-        } else if (button = 3) {
+        } else if (button == Buttons.AB) {
             return input.buttonIsPressed(Button.AB)
-        } else if (button = 4) {
+        } else if (button == Buttons.L) {
             return input.logoIsPressed()
         }
         return false
@@ -54,68 +54,4 @@ namespace snowflake_input {
         if (input.logoIsPressed()) {}
     }
     if (input.buttonIsPressed(Button.AB)) {}
-}  
-//function button (albab: string, number_of_times: number) {
-//    if (albab == "A" || albab == "a") {
-//        for (let index = 0; index < number_of_times; index++) {
-//            while (input.buttonIsPressed(Button.A)) {
-//                basic.pause(1)
-//            }
-//            for (let index = 0; index < 8; index++) {
-//                basic.pause(25)
-//                if (input.buttonIsPressed(Button.A)) {
-//                    break;
-//                }
-//            }
-//            if (!(input.buttonIsPressed(Button.A))) {
-//                return false
-//            }
-//        }
-//    } else if (albab == "B" || albab == "b") {
-//        for (let index = 0; index < number_of_times; index++) {
-//            while (input.buttonIsPressed(Button.B)) {
-//                basic.pause(1)
-//            }
-//            for (let index = 0; index < 8; index++) {
-//                basic.pause(25)
-//                if (input.buttonIsPressed(Button.B)) {
-//                    break;
-//                }
-//            }
-//            if (!(input.buttonIsPressed(Button.B))) {
-//                return false
-//            }
-//        }
-//    } else if (albab == "A+B" || (albab == "AB" || (albab == "a+B" || (albab == "aB" || (albab == "A+b" || (albab == "Ab" || (albab == "ab" || (albab == "a+b" || (albab == "B+A" || (albab == "BA" || (albab == "B+a" || (albab == "Ba" || (albab == "b+A" || (albab == "bA" || (albab == "ba" || albab == "b+a"))))))))))))))) {
-//        for (let index = 0; index < number_of_times; index++) {
-//            while (input.buttonIsPressed(Button.AB)) {
-//                basic.pause(1)
-//            }
-//            for (let index = 0; index < 8; index++) {
-//                basic.pause(25)
-//                if (input.buttonIsPressed(Button.AB)) {
-//                    break;
-//                }
-//            }
-//            if (!(input.buttonIsPressed(Button.AB))) {
-//                return false
-//            }
-//        }
-//    } else if (albab == "Logo" || (albab == "Logo" || albab == "LOGO")) {
-//        for (let index = 0; index < number_of_times; index++) {
-//            while (input.logoIsPressed()) {
-//                basic.pause(1)
-//            }
-//            for (let index = 0; index < 8; index++) {
-//                basic.pause(25)
-//                if (input.logoIsPressed()) {
-//                    break;
-//                }
-//            }
-//            if (!(input.logoIsPressed())) {
-//                return false
-//            }
-//        }
-//    }
-//    return true
-//}
+} 
