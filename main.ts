@@ -24,13 +24,13 @@ namespace snowflake_input {
     }
     //% blockId=button_press_35372836287323
     //% block="when $albab is pressed $number_of_times times in a row"
-    export function button_pressed (albab: Buttons, number_of_times: number) {
+    export function button_pressed (button: Buttons, number_of_times: number) {
         x:
         for (let index = 0; index < number_of_times; index++) {
-            while (button2(albab)) {}
+            while (button2(button)) {}
             let start = control.millis()
             while(start + 200 > control.millis()) {
-                if(button2(albab)) {
+                if(button2(button)) {
                     continue x
                 }
             }
