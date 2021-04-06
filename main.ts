@@ -18,7 +18,7 @@ namespace snowflake_input {
             }
         })
     }
-    //% block="when $button is pressed $times times"
+    //% block="when $button is held for $time"
     export function onButtonHeld (button: Buttons, time: number, a: () => void) {
         basic.forever(function () {
             if (button_held(button, time)) {
