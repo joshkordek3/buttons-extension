@@ -10,6 +10,12 @@ L,
 }
 //% color=#7AD7F0 weight=0 icon="\uf2dc" block="Input"
 namespace snowflake_input {
+    //% block="when $button is pressed $times times"
+    export function onEventWithHandlerArgsShuffle(button: Buttons, times: number, handler: () => void) {
+        if (button_pressed(button, times)) {
+            handler()
+        }
+    }
     function button2 (button: Buttons) {
         if (button == Buttons.A) {
             return input.buttonIsPressed(Button.A)
@@ -24,6 +30,8 @@ namespace snowflake_input {
     }
     //% blockId=button_press_35372836287323
     //% block="when $albab is pressed $number_of_times times in a row"
+    //% blockHidden=true
+    //% hidden=1
     export function button_pressed (button: Buttons, number_of_times: number) {
         x:
         for (let index = 0; index < number_of_times; index++) {
