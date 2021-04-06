@@ -11,10 +11,20 @@ L,
 //% color=#7AD7F0 weight=0 icon="\uf2dc" block="Input"
 namespace snowflake_input {
     //% block="when $button is pressed $times times"
-    export function onEventWithHandlerArgsShuffle(button: Buttons, times: number, handler: () => void) {
-        if (button_pressed(button, times)) {
-            handler()
-        }
+    export function onButtonPressedTimes (button: Buttons, times: number, a: () => void) {
+        basic.forever(function () {
+            if (button_pressed(button, times)) {
+                control.inBackground(a)
+            }
+        })
+    }
+    //% block="when $button is pressed $times times"
+    export function onButtonHeld (button: Buttons, time: number, a: () => void) {
+        basic.forever(function () {
+            if (button_held(button, time)) {
+                control.inBackground(a)
+            }
+        })
     }
     function button2 (button: Buttons) {
         if (button == Buttons.A) {
@@ -29,9 +39,7 @@ namespace snowflake_input {
         return false
     }
     //% blockId=button_press_35372836287323
-    //% block="when $albab is pressed $number_of_times times in a row"
-    //% blockHidden=true
-    //% hidden=1
+    //% block="$button is pressed $number_of_times times in a row"
     export function button_pressed (button: Buttons, number_of_times: number) {
         x:
         for (let index = 0; index < number_of_times; index++) {
@@ -47,7 +55,7 @@ namespace snowflake_input {
         return true
     }  
     //% blockId=button_press_3828372938287328392793289372832
-    //% block="when $button is held for $time (ms)"
+    //% block="$button is held for $time (ms)"
     export function button_held (button: Buttons, time: number) {
         let start = control.millis()
         while(start + time > control.millis()) {
