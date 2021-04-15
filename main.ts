@@ -1,12 +1,12 @@
 enum Buttons {
 //% block="Button A"
-A,
+AA,
 //% block="Button B"
-B,
+BB,
 //% block="Button A+B"
-AB,
+AABB,
 //% block="Logo"
-L,
+LL,
 }
 //% color=#7AD7F0 weight=0 icon="\uf2dc" block="Input"
 namespace snowflake_input {
@@ -27,13 +27,13 @@ namespace snowflake_input {
         })
     }
     function button2 (button: Buttons) {
-        if (button == Buttons.A) {
+        if (button == Buttons.AA) {
             return input.buttonIsPressed(Button.A)
-        } else if (button == Buttons.B) {
+        } else if (button == Buttons.BB) {
             return input.buttonIsPressed(Button.B)
-        } else if (button == Buttons.AB) {
+        } else if (button == Buttons.AABB) {
             return input.buttonIsPressed(Button.AB)
-        } else if (button == Buttons.L) {
+        } else if (button == Buttons.LL) {
             return input.logoIsPressed()
         }
         return false
